@@ -1,0 +1,15 @@
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/ProdutoController.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/ProdutoRepository.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/ServicoRepository.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/UsuarioController.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/PedidoController.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/PedidoRepository.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Pedido.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Usuario.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Carrosel.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Endereco.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/UsuarioRepository.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Servico.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/ServicoController.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/FatecProjetoADSAgroeCommerceSolutionApplication.class
+br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Produto.class

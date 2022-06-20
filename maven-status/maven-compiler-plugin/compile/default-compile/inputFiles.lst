@@ -1,0 +1,15 @@
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/PedidoRepository.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/ProdutoController.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Servico.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/ProdutoRepository.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Pedido.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/UsuarioRepository.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Usuario.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/UsuarioController.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/ServicoController.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/controller/PedidoController.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/repository/ServicoRepository.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Endereco.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Produto.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/FatecProjetoADSAgroeCommerceSolutionApplication.java
+/home/camilla/Documents/ws-projetos-fatec/Agro-Services/src/main/java/br/gov/sp/fatec/projeto/ads/agroecommercesolution/datajpa/model/Carrosel.java
