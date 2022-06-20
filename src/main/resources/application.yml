@@ -1,0 +1,24 @@
+logging:
+  level:
+    root: ${LOGGIN_LEVEL:INFO}
+
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:mysql://mysqldb/agroservices}
+    username: ${DATASOURCE_USERNAME:root}
+    password: ${DATASOURCE_PASSWORD:agro}
+    #driverClassName: ${DATASOURCE_DRIVER_CLASS_NAME:oracle.jdbc.OracleDriver}
+  jpa:
+    database-platform: ${JPA_DATABASE_PLATFORM:org.hibernate.dialect.MySQL5InnoDBDialect}
+    hibernate:
+      use-new-id-generator-mappings: ${JPA_USE_NEW_ID_GENERATOR_MAPPINGS:false}
+      ddl-auto: ${JPA_DDL_AUTO:create}
+      show-sql: ${JPA_SHOW_SQL:true}
+      format-sql: ${JPA_FORMAT_SQL:true}
+ 
+  messages:
+    encoding: UTF-8
+
+  http:
+    encoding:
+      charset: UTF-8

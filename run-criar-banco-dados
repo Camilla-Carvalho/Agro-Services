@@ -1,0 +1,136 @@
+-- Comando abaixo criar um container a partir da imagem docker mysql:8
+-- $ podman run --name mysqldb-agro --network agro-services-network -p 3306:3306 -e MYSQL_ROOT_PASSWORD=agro -e MYSQL_DATABASE=agroservices -d mysql:8
+-- Comando abaixo injeta este arquivo SQL no container de Banco de Dados Mysql {mysqldb-agro: nome do container}
+-- $ podman exec -it mysqldb-agro mysql -uroot -pagro < run-criar-banco-dados
+
+-- CREATE DATABASE 'agroservices' CHARACTER SET latin1 COLLATE latin1_general_ci
+
+-- agroservices.pedido definition
+
+use agroservices;
+
+CREATE TABLE `pedido` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `data_entrega` datetime DEFAULT NULL,
+  `forma_pagamento` varchar(255) DEFAULT NULL,
+  `id_usuario` int DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `produtos` varchar(255) DEFAULT NULL,
+  `servicos` varchar(255) DEFAULT NULL,
+  `total` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- agroservices.produto definition
+
+CREATE TABLE `produto` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(255) DEFAULT NULL,
+  `imagem` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `peso` varchar(255) DEFAULT NULL,
+  `preco` double DEFAULT NULL,
+  `tamanho` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- agroservices.servico definition
+
+CREATE TABLE `servico` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `contato` varchar(255) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
+  `fornecedor` varchar(255) DEFAULT NULL,
+  `imagem` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `preco` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- agroservices.usuario definition
+
+CREATE TABLE `usuario` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `cpf` varchar(255) DEFAULT NULL,
+  `datanascimento` datetime DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `endereco` varchar(255) DEFAULT NULL,
+  `isadmin` bit(1) DEFAULT NULL,
+  `nomecompleto` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL,
+  `telefone` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO agroservices.usuario
+(id, cpf, datanascimento, email, endereco, isadmin, nomecompleto, senha, telefone)
+VALUES(1, '067.693.880-90', '2002-06-13 22:03:59', 'geraldo@email.com', 'Rua abc n° 123', 0, 'Geraldo Luiz', 'abc', '11 933215466');
+INSERT INTO agroservices.usuario
+(id, cpf, datanascimento, email, endereco, isadmin, nomecompleto, senha, telefone)
+VALUES(3, '953.666.810-65', '2002-06-13 22:03:59', 'reginaldo@email.com', 'Rua ghi n° 789', 0, 'Reginaldo Rossi', 'abc', '11 933215466');
+INSERT INTO agroservices.usuario
+(id, cpf, datanascimento, email, endereco, isadmin, nomecompleto, senha, telefone)
+VALUES(4, '760.162.390-46', '2002-06-13 22:03:59', 'gloria@email.com', 'Rua jkl n° 101', 0, 'Glória Mendes', 'abc', '11 933215466');
+INSERT INTO agroservices.usuario
+(id, cpf, datanascimento, email, endereco, isadmin, nomecompleto, senha, telefone)
+VALUES(5, '700.629.130-50', '2002-06-13 22:03:59', 'aristoteles@email.com', 'Rua cbn n° 102', 0, 'Aristóteles Costa', 'abc', '11 933215466');
+INSERT INTO agroservices.usuario
+(id, cpf, datanascimento, email, endereco, isadmin, nomecompleto, senha, telefone)
+VALUES(6, '067.693.880-90', '2001-09-19 18:23:04', 'contatoadm@email.com', 'rua Major Leônidas Cardoso, 443', 1, 'admin', 'admin', NULL);
+
+
+INSERT INTO agroservices.produto
+(id, descricao, imagem, nome, peso, preco, tamanho)
+VALUES(1, 'Características: planta pesada e aberta, de talo grosso, com folhas grossas, largas, crespas e abundantes. Possui coloração verde brilhante, uniforme e bom formato.', 'https://images.tcdn.com.br/img/img_prod/939486/sementes_de_alface_bs_ac0055_peletizada_pcte_c_7_500_sementes_711_11_7cd5c0e2454a0b43a9a0ea8383e513e4.jpg', 'Sementes de Alface BS AC0055 Peletizada', '7.500  Sementes', 251.2, 'padrao');
+INSERT INTO agroservices.produto
+(id, descricao, imagem, nome, peso, preco, tamanho)
+VALUES(2, 'Indeterminado Italiano / Longa Vida Peso médio: 210 a 230g. Ciclo: Médio.', 'https://images.tcdn.com.br/img/img_prod/939486/sementes_de_tomate_hibrido_plutao_env_c_1_000_sementes_771_1_3ea4e83351cb618e6e68aa41e24fbd2d.jpg', 'Sementes de Tomate Híbrido Plutão Env.', '1.000 Sementes', 907.41, 'medio');
+INSERT INTO agroservices.produto
+(id, descricao, imagem, nome, peso, preco, tamanho)
+VALUES(3, 'Melancia do tipo "Crimson Sweet" de ciclo precoce Apresenta planta vigorosa com alto enfolhamento, alto rendimento, excelente sanidade e fácil frutificação Fruto de excelente sabor com formato semi-arredondado.', 'https://images.tcdn.com.br/img/img_prod/939486/sementes_de_melancia_hibrida_colt_env_c_1_000_sementes_89_1_2d9a8e58f6450ec16c15814241a722b1.jpg', 'Sementes de Melancia Híbrida Colt Env', '.1.000 Sementes', 351.85, 'padrao');
+INSERT INTO agroservices.produto
+(id, descricao, imagem, nome, peso, preco, tamanho)
+VALUES(4, 'Cebola de dias curtos com excelente formação radicular e folhas de média cerosidade.
+
+Apresenta bulbo arredondado de alta uniformidade com boa coloração e peso médio de 280 gramas.', 'https://images.tcdn.com.br/img/img_prod/939486/sementes_de_cebola_hibrida_arizona_lata_c_400_gramas_37_1_aaf426bafa0f5a35c0d95a19ccd04db0.jpg', 'Sementes de Cebola Híbrida Arizona Lata ', '400 Gramas', 674.87, 'medio');
+INSERT INTO agroservices.produto
+(id, descricao, imagem, nome, peso, preco, tamanho)
+VALUES(5, 'Planta precoce de alta produção Peso médio de 1,9 kg (tamanho médio) Frutos semi-achatados, muito uniformes Não necessita de polinizador (não é macho estéril)', 'https://images.tcdn.com.br/img/img_prod/939486/sementes_de_abobora_ebisu_lata_c_100_gramas_17_2_44130f5dd9c07cf098d1720b3623282a.jpg', 'Sementes de Abóbora Híbrida Ebisu Lata', '100 Gramas', 300.02, 'padrao');
+
+
+INSERT INTO agroservices.servico
+(id, contato, descricao, fornecedor, imagem, nome, preco)
+VALUES(1, 'agroservices@email.com', 'Soluções completas para toda a cadeia agrícola, desenvolvemos aplicações sob medida para atender suas necessidades.', 'Agro Services', NULL, 'Consultoria Agricultura', 300.0);
+INSERT INTO agroservices.servico
+(id, contato, descricao, fornecedor, imagem, nome, preco)
+VALUES(2, 'agroservices@gmail.com', 'Do plantio a colheita, saiba como nossas soluções podem agregar valor ao seu negócio.', 'Agro Services', NULL, 'Consultoria Florestal', 350.0);
+INSERT INTO agroservices.servico
+(id, contato, descricao, fornecedor, imagem, nome, preco)
+VALUES(4, 'geomap@email.com', 'Certificação e Retificação de Imóveis Rurais.', 'GeoMapping Serviços ', NULL, 'Georreferenciamento', 400.0);
+INSERT INTO agroservices.servico
+(id, contato, descricao, fornecedor, imagem, nome, preco)
+VALUES(5, 'escavamin@email.com', 'Gerenciamento de estoques, Planejamento e Escavação de Minas, Prospecção de Áreas, Ortomosaico, Modelos Digitais de Elevação e do Terreno, Curvas de Nível, Mapas de declividade.', 'Pedreira Stone', NULL, 'Mineração', 300.0);
+INSERT INTO agroservices.servico
+(id, contato, descricao, fornecedor, imagem, nome, preco)
+VALUES(6, 'naturgy@email.com', 'Inspeções em Linhas de Transmissão, Oleodutos e Gasodutos. Ortomosaico, Modelos Digitais de Elevação e do Terreno, Curvas de Nível, Mapas de Declividade e Prospecção de Áreas.', 'Naturgy', NULL, 'Energia óleo e gás', 80.0);
+
+
+
+INSERT INTO agroservices.pedido
+(id, data_entrega, forma_pagamento, id_usuario, nome, produtos, servicos, total)
+VALUES(1, '2022-04-23 14:00:00', 'Boleto', 4, 'Glória Mendes', '3', '0', 351.95);
+INSERT INTO agroservices.pedido
+(id, data_entrega, forma_pagamento, id_usuario, nome, produtos, servicos, total)
+VALUES(2, '2022-07-10 18:00:00', 'Boleto', 1, 'Geraldo Luiz', '2', '0', 907.41);
+INSERT INTO agroservices.pedido
+(id, data_entrega, forma_pagamento, id_usuario, nome, produtos, servicos, total)
+VALUES(3, '2022-06-15 12:00:00', 'Boleto', 2, 'Francisca da Silva', '5', '0', 300.02);
+INSERT INTO agroservices.pedido
+(id, data_entrega, forma_pagamento, id_usuario, nome, produtos, servicos, total)
+VALUES(4, '2022-07-12 18:00:00', 'Boleto', 1, 'Geraldo Luiz', '3', '6', 431.85);
+
+
